@@ -31,7 +31,7 @@ private:
 
 	float fov = 75.0;
 	float size = 1.0;
-	Vector2 frustum_offset;
+	//Vector2 frustum_offset;
 	// _ prefix to avoid conflict with Windows defines.
 	float _near = 0.05;
 	float _far = 4000.0;
@@ -54,13 +54,13 @@ private:
 	// void _camera_make_current(Node *p_camera);
 	friend class Viewport;
 	void _update_audio_listener_state();
-	TypedArray<Plane> _get_frustum() const;
+	//TypedArray<Plane> _get_frustum() const;
 
 	DopplerTracking doppler_tracking = DOPPLER_TRACKING_DISABLED;
 	VelocityTracker3D *velocity_tracker;
 
 	RID pyramid_shape;
-	Vector<Vector3> pyramid_shape_points;
+	//Vector<Vector3> pyramid_shape_points;
 
 protected:
 	void _update_camera();
@@ -68,11 +68,11 @@ protected:
 	void _update_camera_mode();
 
 	void _notification(int p_what);
-	void _validate_property(PropertyInfo& p_property) const;
+	//void _validate_property(PropertyInfo& p_property) const;
 
 	static void _bind_methods();
 
-	Projection _get_camera_projection(real_t p_near) const;
+	//Projection _get_camera_projection(real_t p_near) const;
 
 public:
 	enum {
@@ -80,9 +80,9 @@ public:
 		NOTIFICATION_LOST_CURRENT = 51
 	};
 
-	void set_perspective(real_t p_fovy_degrees, real_t p_z_near, real_t p_z_far);
-	void set_orthogonal(real_t p_size, real_t p_z_near, real_t p_z_far);
-	void set_frustum(real_t p_size, Vector2 p_offset, real_t p_z_near, real_t p_z_far);
+	//void set_perspective(real_t p_fovy_degrees, real_t p_z_near, real_t p_z_far);
+	///void set_orthogonal(real_t p_size, real_t p_z_near, real_t p_z_far);
+	//void set_frustum(real_t p_size, Vector2 p_offset, real_t p_z_near, real_t p_z_far);
 	void set_projection(Camera3D::ProjectionType p_mode);
 
 	void make_current();
