@@ -5,17 +5,30 @@
 
 int main()
 {
-	Rect_Array2d test;
+	Rect_Array2d<float> test;
+	Rect_Array3d<float> test1;
+	test1.height = 3;
+	test1.widht = 4;
+	test1.depth = 5;
+		
 	test.height = 3;
 	test.widht = 4;
-	float** arr = _Rect_Malloc_2d<float>(test.height, test.widht);
+
+	test.map = _Rect_Malloc_2d<float>(test.height, test.widht);
+	test1.map = _Rect_Malloc_3d<float>(test1.height, test1.widht, test1.depth);
+
+	_Rect_Free_2d(test);
+
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 4; j++)
 		{
-			arr[i][j] = i / j;
-			printf("%g ", arr[i][j]);
+			test.map[i][j] = (float)(i);
+			printf("%g ", test.map[i][j]);
 		}
 		printf("\n");
 	}
+	
+
+
 }

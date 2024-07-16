@@ -3,23 +3,26 @@
 #include <stdlib.h>
 
 void* _Malloc(size_t size);
+void _Free(void* arr);
 
 //todo: Add debug memory map
 
 //Real multidimensional arrays
 
 //Rect array
+template<typename Type>
 struct Rect_Array3d 
 {
-	void*** map;
+	Type*** map;
 	size_t height;
 	size_t widht;
 	size_t depth;
 };
 
+template<typename Type>
 struct Rect_Array2d 
 {
-	void** map;
+	Type** map;
 	size_t widht;
 	size_t height;
 };
@@ -30,6 +33,13 @@ Type ***_Rect_Malloc_3d(size_t height, size_t widht, size_t depth);
 template<typename Type>
 Type** _Rect_Malloc_2d(size_t height, size_t widht);
 #include "RectMalloc.hpp"
+
+//Safe Rect Memory Clear
+template<typename Type>
+void _Rect_Free_3d(Rect_Array3d<Type> *r_arr_3d);
+template<typename Type>
+void _Rect_Free_2d(Rect_Array2d<Type> *r_arr_2d);
+#include "RectMemoryClear.hpp"
 
 //bool _Rect_Free_3d(Rect_Array3d* arr3d);
 //bool _Rect_Free_2d(Rect_Array2d* arr2d);
