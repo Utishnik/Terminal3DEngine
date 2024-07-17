@@ -15,20 +15,32 @@ int main()
 	test.widht = 4;
 
 	test.map = _Rect_Malloc_2d<float>(test.height, test.widht);
-	test1.map = _Rect_Malloc_3d<float>(test1.height, test1.widht, test1.depth);
+	test1.map = _Rect_Malloc_3d<float>(test1.height, test1.widht, test1.depth);//ошибка походу тут
 
-	_Rect_Free_2d(test);
+	//ошибка возникает выше
+	printf("d  %p\n",test.map);
+	for (int i = 0; i < 2; i++) free(test.map[i]);
+	//free(arr1);
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	for (int j = 0; j < 4; j++)
+	//	{
+	//		arr1[i][j] = (float)(i);
+	//		printf("%g ", arr1[i][j]);
+	//	}
+	//	printf("\n");
+	//}
+	//_Rect_Free_2d(test);
 
-	for (int i = 0; i < 3; i++)
+	/*
+	int* gg = (int*)malloc(sizeof(int) * 10);
+	free(gg);
+	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 4; j++)
-		{
-			test.map[i][j] = (float)(i);
-			printf("%g ", test.map[i][j]);
-		}
-		printf("\n");
+		gg[i] = i;
+		printf("%d\n", gg[i]);
 	}
-	
+	*Я хз че за херня я но вочему то даже тут не всегда выдает ошибку и выводятся данные*/
 
 
 }

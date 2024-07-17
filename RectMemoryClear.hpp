@@ -7,9 +7,8 @@ void _Rect_Free_2d(Rect_Array2d<Type> r_arr_2d)
 	for (size_t i = 0; i < r_arr_2d.height; i++)
 	{
 		_Free(r_arr_2d.map[i]);
-		printf("norm\n");
 	}
-	//_Free(r_arr_2d.map);
+	_Free(r_arr_2d.map);
 }
 
 template<typename Type>

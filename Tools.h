@@ -36,9 +36,9 @@ Type** _Rect_Malloc_2d(size_t height, size_t widht);
 
 //Safe Rect Memory Clear
 template<typename Type>
-void _Rect_Free_3d(Rect_Array3d<Type> *r_arr_3d);
+void _Rect_Free_3d(Rect_Array3d<Type> r_arr_3d);
 template<typename Type>
-void _Rect_Free_2d(Rect_Array2d<Type> *r_arr_2d);
+void _Rect_Free_2d(Rect_Array2d<Type> r_arr_2d);
 #include "RectMemoryClear.hpp"
 
 //bool _Rect_Free_3d(Rect_Array3d* arr3d);
