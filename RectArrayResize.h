@@ -20,7 +20,7 @@ size_t _Rect_ResizeCol3d(size_t cnt_new_col,Rect_Array3d<Type>* arr3d,bool save_
                         save_slice_data[j][k]=arr3d->map[i][j][k];
             _Free_2d(arr3d->map[i],arr3d->height);
 
-            arr3d->map[i]=_Rect_Malloc_2d<Type>(cnt_new_col,arr3d->widht);
+            arr3d->map[i]=_Rect_Malloc_2d<Type>(arr3d->widht,cnt_new_col);
             if(save_data)
             {
                 for(size_t j=0;j<arr3d->height;j++)
@@ -36,7 +36,6 @@ size_t _Rect_ResizeCol3d(size_t cnt_new_col,Rect_Array3d<Type>* arr3d,bool save_
     arr3d->widht=cnt_new_col;
     return 0;
 }
-
 
 
 #endif // RECTARRAYRESIZE_H_INCLUDED

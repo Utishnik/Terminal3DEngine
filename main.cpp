@@ -54,9 +54,9 @@ int main()
 
 	for(int i=0;i<5;i++)
     {
-        for(int j=0;j<25;j++)
+        for(int j=0;j<4;j++)
         {
-            for(int k=0;k<4;k++)
+            for(int k=0;k<25;k++)
             {
                 test1.map[i][j][k]=(float)i;
                 printf("%g ",test1.map[i][j][k]);
