@@ -4,6 +4,7 @@
 #include <windows.h>
 //todo : https://www.cyberforum.ru/cpp-beginners/thread2709026.html решить эту проблему добавить возможность разносить шаблоны на основе tpp(но это не точно)
 
+
 int main()
 {
 	Rect_Array2d<float> test;

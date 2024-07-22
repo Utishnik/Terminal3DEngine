@@ -38,4 +38,5 @@ size_t _Rect_ResizeCol3d(size_t cnt_new_col,Rect_Array3d<Type>* arr3d,bool save_
 }
 
 
+
 #endif // RECTARRAYRESIZE_H_INCLUDED
